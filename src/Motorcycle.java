@@ -17,4 +17,12 @@ public class Motorcycle extends Vehicle{
         this.hasSidecar = sidecar;
 
     }
+
+    //Methods
+    @Override
+    public String toString(){
+        String vehicle = super.toString();
+        String trailer = (this.hasSidecar ? "\n\t- with sidecar" : "\n\t- without sidecar");
+        return vehicle + trailer;
+    }
 }
