@@ -45,6 +45,16 @@ public class Vehicle {
         this.color = color;
         this.category = category;
     }
+
+    //Method
+    @Override
+    public String toString(){
+        return
+            "\t- make: " + this.make +
+            "\n\t- plate: " + this.plate +
+            "\n\t- color: " + this.color +
+            "\n\t- category: " + this.category;
+    }
 }
 
 enum VehicleType{

@@ -8,7 +8,6 @@ public class Car extends Vehicle{
         return gear;
     }
 
-    //Constructor
     public void setGear(Gear gear) {
         this.gear = gear;
     }
@@ -21,16 +20,26 @@ public class Car extends Vehicle{
         this.type = type;
     }
 
+    //Constructor
     public Car (String make, String plate, String color, VehicleType category,Gear gear, CarType carType){
         super(make, plate, color, category);
         this.type = carType;
         this.gear = gear;
     }
+
+    //Method
+    @Override
+    public String toString(){
+        String vehicle = super.toString();
+        String trailer = "\n\t- gear type: " + this.gear +
+                "\n\t- type: " + this.type;
+        return vehicle + trailer;
+    }
 }
 
 
 enum CarType{
-    Sport, SUV, Hatchback, Minivan, Sedan
+    Sport, SUV, Hatchback, Minivan, Sedan;
 }
 
 enum Gear{
