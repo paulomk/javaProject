@@ -4,6 +4,7 @@ public class Employee {
     private int birthYear;
     private double rate;
     private Vehicle vehicle;
+    private Contract contract;
 
     public Employee(String name, int birthYear, double rate, Vehicle vehicle) {
         this.name = name;
@@ -47,4 +48,13 @@ public class Employee {
                 ", vehicle='" + vehicle + '\'' +
                 '}';
     }
+
+    public void signContract(Contract contract){
+        this.contract = contract;
+    }
+
+    public Contract contractInfo(){
+        return this.contract;
+    }
+
 }
