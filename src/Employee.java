@@ -49,12 +49,23 @@ public class Employee {
                 '}';
     }
 
+    /**
+     * This method makes an employee sign a contract. In case they already have a contract, it calls the method to calculate
+     * accumulated salary before applying the new contract.
+     * @param contract of a Contract type
+     */
     public void signContract(Contract contract){
+        if (this.contract != null){
+            contract.accumulatedSalary(); //calculate before
+        }
         this.contract = contract;
     }
 
-    public Contract contractInfo(){
-        return this.contract;
+    public String contractInfo(){
+        return name + " is a " + this.getClass().getName() + " " + this.contract;
     }
 
+    public Contract getContract() { //this get method is necessary to access the polymorphed method "accumulatedSalary"
+        return contract;
+    }
 }

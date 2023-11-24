@@ -1,15 +1,20 @@
 public class Temporary extends Contract{
+    //NO Exclusive fields
 
+    //Constructor
     public Temporary(double hourlySalary, int accumulatedHours){
-        super(hourlySalary, accumulatedHours);
+        super(hourlySalary, accumulatedHours); //hourly and calculate by hour
     }
 
-    public double accumulatedSalary(){
-        return 1; //implement me
+    //Methods
+    @Override
+    public String toString(){
+        return String.format("he/she is a temporary employee with %.2f " +
+                "hourly salary and he has worked for %d hours.\n", hourlyMonthlySalary, hoursDaysWorked);
     }
 
     @Override
-    public String toString(){
-        return "a"; //implement me
+    public double accumulatedSalary() {
+        return hourlyMonthlySalary * hoursDaysWorked;
     }
 }

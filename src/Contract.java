@@ -1,6 +1,7 @@
 public abstract class Contract {
-    double hourlyMonthlySalary;
-    int hoursDaysWorked;
+    //Fields
+    protected double hourlyMonthlySalary;
+    protected int hoursDaysWorked;
 
     //Constructor
     public Contract(double hourlyMonthlySalary, int hoursDaysWorked){
