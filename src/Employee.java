@@ -4,6 +4,7 @@ public class Employee {
     private int birthYear;
     private double rate;
     private Vehicle vehicle;
+    private Contract contract;
 
     public Employee(String name, int birthYear, double rate, Vehicle vehicle) {
         this.name = name;
@@ -46,5 +47,25 @@ public class Employee {
                 ", rate=" + rate +
                 ", vehicle='" + vehicle + '\'' +
                 '}';
+    }
+
+    /**
+     * This method makes an employee sign a contract. In case they already have a contract, it calls the method to calculate
+     * accumulated salary before applying the new contract.
+     * @param contract of a Contract type
+     */
+    public void signContract(Contract contract){
+        if (this.contract != null){
+            contract.accumulatedSalary(); //calculate before
+        }
+        this.contract = contract;
+    }
+
+    public String contractInfo(){
+        return name + " is a " + this.getClass().getName() + " " + this.contract;
+    }
+
+    public Contract getContract() { //this get method is necessary to access the polymorphed method "accumulatedSalary"
+        return contract;
     }
 }
