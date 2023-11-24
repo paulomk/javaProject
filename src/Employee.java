@@ -3,16 +3,15 @@ public class Employee {
     final private String name;
     private int birthYear;
     private double rate;
-    private String vehicle; //placeholder for the vehicle object
-    public Employee(String name, int birthYear, double rate) {
+    private Vehicle vehicle;
+
+    public Employee(String name, int birthYear, double rate, Vehicle vehicle) {
         this.name = name;
         this.birthYear = birthYear;
-        this.rate = rate;
-    }
-    public Employee(String name, int birthYear, double rate, String vehicle) {
-        this(name,birthYear,rate);
+        this.rate = rate<10?10:rate>100?100:rate;
         this.vehicle = vehicle;
     }
+
     /**
      * Computed property age
      * @return the age of the employee
@@ -35,7 +34,17 @@ public class Employee {
         return rate;
     }
 
-    public String getVehicle() {
-        return vehicle;
+//    public String getVehicle() {
+//        return vehicle;
+//    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", birthYear=" + birthYear +
+                ", rate=" + rate +
+                ", vehicle='" + vehicle + '\'' +
+                '}';
     }
 }
