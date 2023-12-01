@@ -1,4 +1,5 @@
 public class Programmer extends Employee {
+    private final double GAIN_FACTOR_PROJECTS=200;
     private final int projectsCompleted;
     // Constructor for Programmer class
     public Programmer(String name, int birthYear, int projectsCompleted) {
@@ -15,9 +16,12 @@ public class Programmer extends Employee {
         super(name, birthYear, 100, vehicle);
         this.projectsCompleted = projectsCompleted;
     }
-
+    @Override
+    public double annualBonus() {
+        return projectsCompleted*GAIN_FACTOR_PROJECTS;
+    }
     @Override
     public String toString() {
-        return super.toString()+" and completed "+projectsCompleted+" projects.\n";
+       return super.toString()+" and completed "+projectsCompleted+" projects.\nHis/Her estimated annual income is "+annualIncome();
     }
 }

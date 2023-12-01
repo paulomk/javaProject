@@ -1,4 +1,6 @@
 public class Manager extends Employee {
+    private final double GAIN_FACTOR_TRAVEL=100;
+    private final double GAIN_FACTOR_CLIENT=500;
     private int traveledDays;
     private int newClients;
 
@@ -24,7 +26,11 @@ public class Manager extends Employee {
     }
 
     @Override
+    public double annualBonus() {
+        return newClients*GAIN_FACTOR_CLIENT+traveledDays*GAIN_FACTOR_TRAVEL;
+    }
+    @Override
     public String toString() {
-        return super.toString()+ "He/She traveled "+traveledDays+" days and has brought "+newClients+" new clients.\n";
+        return super.toString()+ "He/She traveled "+traveledDays+" days and has brought "+newClients+" new clients.\nHis/Her estimated annual income is "+annualIncome();
     }
 }
