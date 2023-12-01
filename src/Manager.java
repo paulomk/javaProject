@@ -5,22 +5,26 @@ public class Manager extends Employee {
     // Constructor for Manager class
 
     public Manager(String name, int birthYear, int newClients, int traveledDays) {
-        this(name, birthYear, newClients, traveledDays, 0.0, null);
+        this(name, birthYear, newClients, traveledDays, 100, null);
     }
 
-    public Manager(String name, int birthYear, int newClients, int traveledDays, double rate) {
+    public Manager(String name, int birthYear, int newClients, int traveledDays, int rate) {
         this(name, birthYear, newClients, traveledDays, rate, null);
     }
 
-    public Manager(String name, int birthYear, int newClients, int traveledDays, double rate, Vehicle vehicle) {
+    public Manager(String name, int birthYear, int newClients, int traveledDays, int rate, Vehicle vehicle) {
         super(name, birthYear, rate, vehicle);
         this.traveledDays = traveledDays;
         this.newClients = newClients;
     }
     public Manager(String name, int birthYear, int newClients, int traveledDays, Vehicle vehicle) {
-        super(name, birthYear, 0.0, vehicle);
+        super(name, birthYear, 100, vehicle);
         this.traveledDays = traveledDays;
         this.newClients = newClients;
     }
 
+    @Override
+    public String toString() {
+        return super.toString()+ "He/She traveled "+traveledDays+" days and has brought "+newClients+" new clients.\n";
+    }
 }

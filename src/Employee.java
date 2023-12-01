@@ -2,15 +2,16 @@ import java.util.Calendar;
 public class Employee {
     final private String name;
     private int birthYear;
-    private double rate;
+    private int rate;
     private Vehicle vehicle;
     private Contract contract;
 
-    public Employee(String name, int birthYear, double rate, Vehicle vehicle) {
+    public Employee(String name, int birthYear, int rate, Vehicle vehicle) {
         this.name = name;
         this.birthYear = birthYear;
-        this.rate = rate<10?10:rate>100?100:rate;
+        this.rate = rate<10?10:rate>100?100:rate; //0 means 100% because that means none given, need to be default which is 100%
         this.vehicle = vehicle;
+        System.out.println("We have a new employee: "+name+", a "+this.getClass().getSimpleName().toLowerCase()+".");
     }
 
     /**
@@ -41,12 +42,11 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", birthYear=" + birthYear +
-                ", rate=" + rate +
-                ", vehicle='" + vehicle + '\'' +
-                '}';
+
+        return "Name: " + name +", a "+ this.getClass().getSimpleName()+"\n" +
+                "Age: " + getAge() +"\n"+
+                "Employee has a "+vehicle.getClass().getSimpleName().toLowerCase()+"\n" + vehicle+"\n"+
+                name + " has an Occupation rate: "+rate+"% ";
     }
 
     /**
