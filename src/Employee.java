@@ -1,5 +1,5 @@
 import java.util.Calendar;
-public class Employee {
+abstract public class Employee {
     final private String name;
     private int birthYear;
     private int rate;
@@ -67,5 +67,11 @@ public class Employee {
 
     public Contract getContract() { //this get method is necessary to access the polymorphed method "accumulatedSalary"
         return contract;
+    }
+    abstract public double annualBonus();
+    public double annualIncome(){
+        double annualSalary = getContract()!=null?getContract().accumulatedSalary()*12*(getRate()/100.0):0;
+        return annualSalary+annualBonus();
+
     }
 }
