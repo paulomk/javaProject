@@ -9,7 +9,7 @@ abstract public class Employee {
     public Employee(String name, int birthYear, int rate, Vehicle vehicle) {
         this.name = name;
         this.birthYear = birthYear;
-        this.rate = rate<10?10:rate>100?100:rate; //0 means 100% because that means none given, need to be default which is 100%
+        this.rate = rate<10?10:rate>100?100:rate; //checking to maintain the min 10 and max 100 boundary
         this.vehicle = vehicle;
         System.out.println("We have a new employee: "+name+", a "+this.getClass().getSimpleName().toLowerCase()+".");
     }
