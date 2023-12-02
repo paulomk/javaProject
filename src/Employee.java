@@ -31,14 +31,9 @@ abstract public class Employee {
     public int getBirthYear() {
         return birthYear;
     }
-
     public double getRate() {
         return rate;
     }
-
-//    public String getVehicle() {
-//        return vehicle;
-//    }
 
     @Override
     public String toString() {
@@ -68,6 +63,11 @@ abstract public class Employee {
     public Contract getContract() { //this get method is necessary to access the polymorphed method "accumulatedSalary"
         return contract;
     }
+
+    /**
+     * Abstract method for calculating annual bonus as the calculation is different for employee types
+     * @return double annual bonus
+     */
     abstract public double annualBonus();
     public double annualIncome(){
         double annualSalary = getContract()!=null?getContract().accumulatedSalary()*12*(getRate()/100.0):0;

@@ -4,7 +4,7 @@ public class Manager extends Employee {
     private int traveledDays;
     private int newClients;
 
-    // Constructor for Manager class
+    // Constructors for Manager class
 
     public Manager(String name, int birthYear, int newClients, int traveledDays) {
         this(name, birthYear, newClients, traveledDays, 100, null);
